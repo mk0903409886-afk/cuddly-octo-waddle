@@ -1,3 +1,476 @@
+  /* تنسيقات عامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* تنسيقات الرأس والقائمة */
+        header {
+            background-color: #1a5a7a;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2.2rem;
+            color: #f0ad4e;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        
+        nav ul li a:hover {
+            color: #f0ad4e;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        nav ul li a.active {
+            color: #f0ad4e;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        /* تنسيقات المحتوى الرئيسي */
+        main {
+            padding: 40px 0;
+            min-height: 70vh;
+        }
+        
+        .page-content {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            margin-top: 30px;
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .page-title {
+            color: #1a5a7a;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0ad4e;
+            position: relative;
+        }
+        
+        .page-title i {
+            margin-left: 15px;
+            color: #f0ad4e;
+        }
+        
+        /* تنسيقات الصفحة الرئيسية */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(rgba(26, 90, 122, 0.85), rgba(26, 90, 122, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            background-color: #01060a;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 4px solid #1a5a7a;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgb(246, 238, 238);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: #1a5a7a;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            color: #1a5a7a;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* تنسيقات صفحة عن الجامعة */
+        .university-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .university-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .university-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .university-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-right: 5px solid #f0ad4e;
+        }
+        
+        .card h3 {
+            color: #1a5a7a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* تنسيقات صفحة شروط التقديم */
+        .requirements-list {
+            margin-top: 20px;
+        }
+        
+        .requirements-list li {
+            margin-bottom: 15px;
+            padding-right: 20px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .requirements-list li:before {
+            content: "•";
+            color: #f0ad4e;
+            font-size: 1.8rem;
+            position: absolute;
+            right: -15px;
+            top: -5px;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 25px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .step-number {
+            background-color: #1a5a7a;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        /* تنسيقات صفحة الكليات */
+        .faculties {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .faculty {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-bottom: 5px solid #1a5a7a;
+            transition: transform 0.3s;
+        }
+        
+        .faculty:hover {
+            transform: translateY(-5px);
+        }
+        
+        .faculty h3 {
+            color: #1a5a7a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .faculty ul {
+            margin-right: 20px;
+            margin-top: 15px;
+        }
+        
+        .faculty li {
+            margin-bottom: 8px;
+            padding-right: 10px;
+        }
+        
+        /* تنسيقات صفحة اتصل بنا */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-item i {
+            background-color: #1a5a7a;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            color: #1a5a7a;
+            margin-bottom: 5px;
+        }
+        
+        .map-placeholder {
+            background-color: #e9ecef;
+            border-radius: 8px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        
+        /* تنسيقات الفوتر */
+        footer {
+            background-color: #1a5a7a;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #f0ad4e;
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #f0ad4e;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* تنسيقات للهواتف */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .university-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .page-content {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 40px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+        }
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
